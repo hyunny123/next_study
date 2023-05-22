@@ -6,7 +6,9 @@ export default function Results({ results }) {
       {results.map((result) => (
         <div key={result.id}>{result.original_title}</div>
       ))}
- 
+      {/* {ratedResults.map((re) => (
+        <div key={re.id}>{re.original_title}</div>
+      ))} */}
     </div>
   );
 }

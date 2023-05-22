@@ -6,16 +6,7 @@ const API_KEYS = process.env.API_KEYS;
 
 export default async function Home({ searchParams }) {
   const genre = searchParams.genre || "fecthTrending";
-  // const res = await fetch(
-  //   `https://api.themoviedb.org/3/${
-  //     genre === "fetchTopRated" ? "movie/top_rated" : "trending/all/week"
-  //   }?api_key=${API_KEY}&language=en-US&page=1`,
-  //   { next: { revalidate: 10000 } }
-  // );
-  // const res = await fetch(`https://api.themoviedb.org/3/trending/movie/{time_window}`)
-  // const data = await res.json();
-  // const result = data.results;
-  // console.log(result);
+
   const options = {
     method: "GET",
     headers: {
@@ -24,10 +15,9 @@ export default async function Home({ searchParams }) {
     },
   };
   const res = await fetch(
-    "https://api.themoviedb.org/3/trending/movie/day?language=en-US",
-    // `https://api.themoviedb.org/3/trending/movie/${
-    //   genre === "fetchTopRated" ? "top_rated" : "day"
-    // }?language=en-US&page=1`,
+    `https://api.themoviedb.org/3/${
+      genre === "fetchTopRated" ? "trending/movie/day" : "trending/movie/week"
+    }?language=en-US&page=1`,
     options
   );
 
