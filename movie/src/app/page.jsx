@@ -16,8 +16,8 @@ export default async function Home({ searchParams }) {
   };
   const res = await fetch(
     `https://api.themoviedb.org/3/${
-      genre === "fetchTopRated" ? "trending/movie/day" : "trending/movie/week"
-    }?language=en-US&page=1`,
+      genre === "fetchTopRated" ? "trending/tv/day" : "trending/movie/day"
+    }?language=en-US`,
     options
   );
 

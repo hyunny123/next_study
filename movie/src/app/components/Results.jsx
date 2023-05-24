@@ -1,14 +1,14 @@
 import React from "react";
+import Card from "./Card";
 
 export default function Results({ results }) {
   return (
     <div>
       {results.map((result) => (
-        <div key={result.id}>{result.original_title}</div>
+        <div key={result.id}>
+          <Card key={result.id} result={result} />
+        </div>
       ))}
-      {/* {ratedResults.map((re) => (
-        <div key={re.id}>{re.original_title}</div>
-      ))} */}
     </div>
   );
 }
