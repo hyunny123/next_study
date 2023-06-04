@@ -8,7 +8,7 @@ async function getMovie(movieId) {
   return await res.json();
 }
 
-export default async function MoviePage(params) {
+export default async function MoviePage({params}) {
   const movieId = params.id;
   const movie = await getMovie(movieId);
   return (
@@ -29,6 +29,7 @@ export default async function MoviePage(params) {
           blurDataURL="../../../public/loader-1.svg"
           alt="movie poster"
         ></Image>
+        
       </div>
     </div>
   );
