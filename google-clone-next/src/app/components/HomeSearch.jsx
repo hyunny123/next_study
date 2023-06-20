@@ -49,7 +49,7 @@ export default function HomeSearch() {
           className="btn flex items-center justify-center disabled:opacity-80"
         >
           {randomSearchLoading ? (
-            <h2 className="h-6 text-center">Loading...</h2>
+            <h2 className="h-6 text-center">Loading.....</h2>
           ) : (
             "I am Feeling Lucky"
           )}
